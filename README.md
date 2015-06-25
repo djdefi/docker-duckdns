@@ -1,18 +1,22 @@
+#DuckDNS
 
-docker-duckdns
-==============
+Run the DuckDNS updater for dynamic DNS in a container
 
-This is a simple Docker container for running the [Duck DNS](http://duckdns.org) dynamic DNS update script. It will keep
-your domain.duckdns.org DNS alias up-to-date as your home IP changes. the script runs every 5 minutes.
+##Install On unRaid:
 
-Usage
------
+On unRaid, install from the Community Repositories and enter the app folder location.
 
-Modify the config file /path/to/duckdns/duck.conf with the following:
+
+##Install On Other Platforms (like Ubuntu, Synology 5.2 DSM, etc.):
+
+On other platforms, you can run this docker with the following command:
 
 ```
-DOMAINS=yourdomain
-TOKEN=yourtoken
+docker run -d --name="Duckdns" -v /path/to/config:/config:rw -v /etc/localtime:/etc/localtime:ro aptalca/docker-duckdns
 ```
 
-
+###Setup Instructions
+- Replace the variable "/path/to/config" with your choice of folder on your system. That is where the config files will reside, and they will survive an update, reinstallation, etc. of the container.
+- Visit http://www.duckdns.org to register your subdomain
+- After first run, navigate to the config folder and modify the "duck.conf" file to enter your subdomain and token
+- Check the log file 5 minutes later to make sure it is working correctly
