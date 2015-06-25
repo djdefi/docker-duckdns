@@ -1,8 +1,10 @@
 #!/bin/bash
 
-  #Search for custom config file, if it doesn't exist, copy the default one
+  #Check to make sure the subdomain and token are set
   if [ -z "SUBDOMAIN" ]; then
-    echo "Please pass both your subdomain and token as environment variables in your docker run command"
+    echo "Please pass both your subdomain and token as environment variables in your docker run command. See docker info for more details."
+  elif [ -z "TOKEN" ]; then
+    echo "Please pass both your subdomain and token as environment variables in your docker run command. See docker info for more details."
   fi
   
   #Get docker env timezone and set system timezone
