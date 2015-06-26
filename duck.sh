@@ -9,7 +9,7 @@ if [ ! -z "$SUBDOMAIN" ]; then
   fi
 
 elif [ -f /config/duck.conf ]; then
-  echo "duck.conf found! Using old school method to update IP. Please consider passing subdomain and token as environment values in the future as the duck.conf method is depracated."
+  echo "duck.conf found! Using old school method to update IP. Please consider passing subdomain and token as environment values in the future as the duck.conf method is deprecated."
   tr -d '\r' < /config/duck.conf > /tmp/duck.conf
   . /tmp/duck.conf
   RESPONSE=`curl -s "https://www.duckdns.org/update?domains=$DOMAINS&token=$TOKEN&ip="`
