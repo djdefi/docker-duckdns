@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [! -z "$SUBDOMAIN" ]; then
+if [ ! -z "$SUBDOMAIN" ]; then
   RESPONSE=`curl -s "https://www.duckdns.org/update?domains=$SUBDOMAIN&token=$TOKEN&ip="`
   if [ "$RESPONSE" = "OK" ]; then
   echo "Your IP was updated at "$(date)
