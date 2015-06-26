@@ -5,6 +5,8 @@
     echo "Please pass both your subdomain and token as environment variables in your docker run command. See docker info for more details."
   elif [ -z "TOKEN" ]; then
     echo "Please pass both your subdomain and token as environment variables in your docker run command. See docker info for more details."
+  else
+    echo "Retrieving subdomain and token from the environment variables"
   fi
   
   #Get docker env timezone and set system timezone
