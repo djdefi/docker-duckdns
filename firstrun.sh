@@ -7,13 +7,11 @@
       echo "Retrieving variables from old duck.conf"
       tr -d '\r' < /config/duck.conf > /tmp/duck.conf
       . /tmp/duck.conf
-      rm /config/duck.new.conf
-      echo -e "SUBDOMAINS=$DOMAINS \nTOKEN=$TOKEN \n" >> /config/duck.new.conf
+      echo -e "SUBDOMAINS=$DOMAINS \nTOKEN=$TOKEN \n" > /config/duck.new.conf
     fi
   else
     echo "Retrieving subdomain and token from the environment variables"
-    rm /config/duck.new.conf
-    echo -e "SUBDOMAINS=$SUBDOMAINS \nTOKEN=$TOKEN \n" >> /config/duck.new.conf
+    echo -e "SUBDOMAINS=$SUBDOMAINS \nTOKEN=$TOKEN \n" > /config/duck.new.conf
   fi
   
   #Get docker env timezone and set system timezone
