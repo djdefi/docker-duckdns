@@ -18,6 +18,5 @@ docker run -d --name="Duckdns" -v /path/to/config:/config:rw -v /etc/localtime:/
 ###Setup Instructions
 - Replace the variable "/path/to/config" with your choice of folder on your system. That is where the config files will reside, and they will survive an update, reinstallation, etc. of the container.
 - Visit http://www.duckdns.org to register your subdomain
-- After first run, navigate to the config folder and modify the "duck.conf" file to enter your subdomain (not the full domain) and token
-- If you have multiple subdomains you would like to update, you can enter all of them separated by commas and NO spaces in between (whatever you put in becomes part of the url and spaces aren't allowed in urls)
+- After first run, navigate to the config folder and modify the "duck.conf" file to enter your subdomain and token
 - Check the log file 5 minutes later to make sure it is working correctly
