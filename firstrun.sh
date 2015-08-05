@@ -1,8 +1,8 @@
 #!/bin/bash
   
-  rm /config/duck.new.conf
+  rm -f /config/duck.new.conf
   #Check to make sure the subdomain and token are set
-  if [ -z "SUBDOMAINS" ] || [ -z "TOKEN" ]; then
+  if [ -z "$SUBDOMAINS" ] || [ -z "$TOKEN" ]; then
     echo "Please pass both your subdomain(s) and token as environment variables in your docker run command. See docker info for more details."
     if [ -f /config/duck.conf ]; then
       echo "Retrieving variables from old duck.conf"
