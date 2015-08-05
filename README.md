@@ -16,7 +16,7 @@ docker run -d --name="Duckdns" -e SUBDOMAINS="XXXX" -e TOKEN="YYYY" -v /path/to/
 ```
 
 ###Setup Instructions
-- Replace the variable "/path/to/config" with your choice of folder on your system. That is where the config files will reside, and they will survive an update, reinstallation, etc. of the container.
+- Replace the variable "/path/to/config" with your choice of folder on your system. That is where the config and log files will reside.
 - Visit http://www.duckdns.org to register your subdomain
 - Replace XXXX with your DuckDNS subdomain(s) (You can include multiple subdomains, just separate them with a comma and leave no spaces in between)
 - Replace YYYY with your DuckDNS token
