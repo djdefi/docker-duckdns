@@ -4,7 +4,7 @@ Run the DuckDNS updater for dynamic DNS in a container
 
 ##Install On unRaid:
 
-On unRaid, install from the Community Repositories and enter the app folder location.
+On unRaid, install from the Community Applications and enter the app folder location.
 
 
 ##Install On Other Platforms (like Ubuntu, Synology 5.2 DSM, etc.):
