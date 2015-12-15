@@ -15,6 +15,9 @@
     echo -e "SUBDOMAINS=$SUBDOMAINS \nTOKEN=$TOKEN \n" > /config/duck.new.conf
   fi
   
+  echo "Fixing permissions"
+  chmod -R go+rw /config
+  
   #Get docker env timezone and set system timezone
   echo $TZ > /etc/timezone
   export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive
