@@ -1,20 +1,15 @@
+FROM hypriot/rpi-alpine-scratch
 
-FROM phusion/baseimage:0.9.16
-
-MAINTAINER aptalca
+RUN apk update && \
+apk upgrade && \
+apk add bash curl && \
+rm -rf /var/cache/apk/*
 
 VOLUME ["/config"]
 
 # Add dynamic dns script
-ADD duck.sh /root/duckdns/duck.sh
+COPY duck.sh /root/duckdns/duck.sh
 
-RUN chmod +x /root/duckdns/duck.sh && \
-mkdir -p /etc/my_init.d
+RUN chmod +x /root/duckdns/duck.sh 
 
-ADD firstrun.sh /etc/my_init.d/firstrun.sh
-ADD duckcron.conf /root/duckdns/duckcron.conf
-
-RUN chmod +x /etc/my_init.d/firstrun.sh && \
-crontab /root/duckdns/duckcron.conf
-
-RUN cron
+CMD /root/duckdns/duck.sh
