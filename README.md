@@ -13,7 +13,7 @@ Run the DuckDNS updater for dynamic DNS in a container on Raspberry Pi
 docker-compose build
 docker-compose up
 ```
-4) Configure crontab to run container twice and hour:
+4) Configure crontab to run container twice an hour:
 ```
 5,35 * * * * docker-compose -f /home/pirate/docker-duckdns/docker-compose.yml up -d
 ```
