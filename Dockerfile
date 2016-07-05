@@ -1,4 +1,4 @@
-FROM hypriot/rpi-alpine-scratch
+FROM djdefi/rpi-alpine
 
 RUN apk update && \
 apk upgrade && \

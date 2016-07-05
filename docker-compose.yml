@@ -2,7 +2,7 @@ version: "2"
 
 services:
   duckdns:
-    build: .
+    image: djdefi/docker-duckdns
     env_file: .env
     volumes:
       - /etc/localtime:/etc/localtime:ro
